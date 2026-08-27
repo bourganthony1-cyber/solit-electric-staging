@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoLit Electric | Licensed Electrician in Denham Springs & Baton Rouge</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Top-rated, licensed, and insured electrical contracting company based in Denham Springs, LA. Specializing in generator installations, panel upgrades, EV chargers, and residential repairs.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "name": "SoLit Electric",
+      "telephone": "+1-225-472-1165",
+      "areaServed": ["Denham Springs", "Baton Rouge", "Livingston Parish"],
+      "founder": { "@type": "Person", "name": "Yancie David" }
+    }
+    </script>
+
+    <style>
+        :root {
+            --brand-orange: #ff9900;
+            --brand-orange-hover: #e68a00;
+            --brand-dark: #0d0d0d;
+            --brand-light: #fcfcfc;
+            --text-gray: #4a4a4a;
+        }
+
+        body, html { margin: 0; padding: 0; font-family: 'Roboto Condensed', sans-serif; color: var(--text-gray); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-weight: 500; margin: 0; color: var(--brand-dark); line-height: 1.2; }
+        a { text-decoration: none; transition: all 0.3s ease; }
+
+        /* Navigation */
+        header { background-color: var(--brand-orange); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; }
+        .nav-container a { color: white; padding: 18px 30px; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; }
+        .nav-container a:hover { background-color: var(--brand-dark); color: var(--brand-orange); }
+
+        /* Hero Section with Lead Form */
+        .hero {
+            background: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.7)), url('../images/home_kitchen_lighting.jpg') no-repeat center center/cover;
+            min-height: 70vh; display: flex; align-items: center; padding: 40px 5%;
+        }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; width: 100%; }
+        @media (min-width: 900px) { .hero-container { grid-template-columns: 1.2fr 0.8fr; } }
+        
+        .hero-text h1 { color: var(--brand-orange); font-size: clamp(3rem, 6vw, 5.5rem); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-text p { color: white; font-size: clamp(1.2rem, 2vw, 1.8rem); margin-top: 15px; font-weight: 300; }
+        .hero-text .trust-badge { display: inline-block; background: var(--brand-orange); color: var(--brand-dark); font-family: 'Oswald'; padding: 8px 15px; margin-top: 20px; font-weight: 700; border-radius: 3px; }
+
+        /* Lead Capture Form */
+        .lead-form-card { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border-top: 6px solid var(--brand-orange); }
+        .lead-form-card h3 { font-size: 2rem; margin-bottom: 10px; color: var(--brand-dark); }
+        .lead-form-card p { font-size: 1rem; color: #666; margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Roboto Condensed'; font-size: 1rem; box-sizing: border-box; }
+        .form-group input:focus { outline: none; border-color: var(--brand-orange); box-shadow: 0 0 5px rgba(255, 153, 0, 0.3); }
+        
+        .btn-submit { width: 100%; background: var(--brand-orange); color: var(--brand-dark); font-family: 'Oswald'; font-size: 1.5rem; padding: 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: 700; transition: all 0.3s ease; text-transform: uppercase; }
+        .btn-submit:hover { background: var(--brand-dark); color: var(--brand-orange); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Services Grid */
+        .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 80px 5%; }
+        .services-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
+        @media (min-width: 768px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .service-card { background: var(--brand-light); padding: 40px; border-left: 5px solid var(--brand-orange); transition: all 0.3s ease; cursor: pointer; }
+        .service-card:hover { transform: translateX(10px); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .service-card h2 { font-size: 1.8rem; margin-bottom: 15px; }
+
+        /* Footer */
+        footer { background-color: var(--brand-dark); color: white; padding: 60px 5%; text-align: center; }
+        footer h2 { color: white; font-size: 2.5rem; margin-bottom: 20px; }
+        footer .phone-link { color: var(--brand-orange); font-size: 3rem; }
+        footer .phone-link:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="nav-container">
+            <a href="#home">HOME</a>
+            <a href="panel-upgrades.html">PANEL UPGRADES</a>
+            <a href="about.html">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SPICED UP HERO & LEAD CAPTURE -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>SoLit Electric</h1>
+                    <p>Honest, straight-shooting electrical work for Denham Springs & Baton Rouge. No job too small. No corporate upselling.</p>
+                    <div class="trust-badge">NEXTDOOR BUSINESS OF THE YEAR</div>
+                </div>
+                
+                <div class="lead-form-card">
+                    <h3>Get an Honest Quote</h3>
+                    <p>Skip the wait. Tell us what you need and Yancie will call you back directly.</p>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>What do you need help with?</option>
+                                <option value="panel">Panel Upgrade / Repair</option>
+                                <option value="generator">Whole Home Generator</option>
+                                <option value="ev">EV Charger Installation</option>
+                                <option value="small-job">Small Job / Troubleshooting</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit">Request Call Back</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="content-wrapper">
+            <h2 style="font-size: 3rem; text-align: center; margin-bottom: 20px;">Expert Electrical Services</h2>
+            <p style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto;">We handle everything from replacing a single outlet to completely rewiring your home.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h2>Whole Home Generators</h2>
+                    <p>Keep the lights on during Louisiana storms. We specialize in home generator installations, interlocks, and inlets for portable setups.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Panel Upgrades</h2>
+                    <p>Ensure your home's electrical panel is safe and up-to-code. We'll give you a straight answer on whether you need a repair or a full replacement.</p>
+                </div>
+                <div class="service-card">
+                    <h2>EV Charging Stations</h2>
+                    <p>Professional installation of Level 2 Electric Vehicle chargers right in your garage or driveway.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Troubleshooting & Repairs</h2>
+                    <p>Flickering lights? Tripped breakers? No job is too small. We will find the problem and fix it fast.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Call Us Directly</h2>
+        <a href="tel:+12254721165" class="phone-link">225-472-1165</a>
+        <div style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; color: #888;">
+            <p><strong>License:</strong> LA State Contractors License #76273 | <strong>Rating:</strong> BBB A+ Accredited</p>
+        </div>
+    </footer>
+
+</body>
+</html>
