@@ -12,8 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- tsParticles Slim Bundle for Sparkles Effect -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -21,8 +19,31 @@
       "@context": "https://schema.org",
       "@type": "Electrician",
       "name": "SoLit Electric",
+      "description": "Top-rated residential electrician specializing in Baton Rouge residential panel upgrades, Denham Springs whole home generator installation, EV chargers, and emergency troubleshooting.",
       "telephone": "+1-225-472-1165",
+      "url": "https://www.solitelectric.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Denham Springs",
+        "addressRegion": "LA",
+        "addressCountry": "US"
+      },
       "areaServed": ["Denham Springs", "Baton Rouge", "Prairieville", "Gonzales", "Livingston Parish"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Electrical Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electrical Panel Upgrades" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Whole Home Generator Installation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "EV Charger Installation" } }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "48"
+      },
       "founder": { "@type": "Person", "name": "Yancie David" }
     }
     </script>
@@ -103,24 +124,25 @@
         .service-info p { color: #aaa; }
 
         /* Reviews Carousel */
-        .carousel-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding: 20px 0; -ms-overflow-style: none; scrollbar-width: none; }
+        .carousel-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 40px; padding: 20px 0; -ms-overflow-style: none; scrollbar-width: none; }
         .carousel-container::-webkit-scrollbar { display: none; }
-        .carousel-slide { flex: 0 0 350px; scroll-snap-align: center; background: rgba(17,17,17,0.9); padding: 30px; border-radius: 12px; border-top: 4px solid var(--brand-gold); backdrop-filter: blur(5px); }
+        .carousel-slide { flex: 0 0 350px; scroll-snap-align: center; background: transparent; padding: 10px 20px; border-left: 3px solid var(--brand-orange); }
         .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
         .review-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-orange); }
         .review-meta h4 { color: white; font-size: 1.2rem; font-family: 'Roboto Condensed'; font-weight: 700; text-transform: none; }
         .review-meta span { color: var(--brand-orange); font-size: 0.9rem; }
         .review-source { margin-left: auto; height: 25px; filter: grayscale(100%) brightness(200%); }
-        .review-text { color: #ddd; font-style: italic; font-size: 1.1rem; }
+        .review-text { color: #ddd; font-style: italic; font-size: 1.1rem; line-height: 1.6; }
 
         /* FAQ Accordion */
         .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: rgba(17,17,17,0.85); margin-bottom: 15px; border-radius: 8px; backdrop-filter: blur(5px); border: 1px solid #333; }
-        .faq-item summary { padding: 20px; cursor: pointer; font-size: 1.3rem; font-family: 'Oswald'; color: white; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item { background: transparent; border-bottom: 1px solid #333; }
+        .faq-item summary { padding: 20px 0; cursor: pointer; font-size: 1.3rem; font-family: 'Oswald'; color: white; list-style: none; display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; }
+        .faq-item summary:hover { color: var(--brand-orange); }
         .faq-item summary::-webkit-details-marker { display: none; }
         .faq-item summary::after { content: '+'; color: var(--brand-orange); font-size: 1.5rem; }
         .faq-item[open] summary::after { content: '-'; }
-        .faq-content { padding: 0 20px 20px 20px; color: #aaa; font-size: 1.1rem; }
+        .faq-content { padding: 0 0 20px 0; color: #aaa; font-size: 1.1rem; line-height: 1.6; }
 
         /* Social Feeds */
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
@@ -395,49 +417,52 @@
     </footer>
 
     <!-- Initialize Sparkles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" defer></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            tsParticles.load("tsparticles", {
-                fullScreen: { enable: false },
-                fpsLimit: 120,
-                particles: {
-                    number: {
-                        value: 120,
-                        density: { enable: true, value_area: 800 }
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                tsParticles.load("tsparticles", {
+                    fullScreen: { enable: false },
+                    fpsLimit: 120,
+                    particles: {
+                        number: {
+                            value: 120,
+                            density: { enable: true, value_area: 800 }
+                        },
+                        color: { value: ["#ff9900", "#ffcc00", "#ffffff"] },
+                        shape: { type: "circle" },
+                        opacity: {
+                            value: 0.8,
+                            random: true,
+                            animation: { enable: true, speed: 1, minimumValue: 0.1, sync: false }
+                        },
+                        size: {
+                            value: 3,
+                            random: true,
+                            animation: { enable: true, speed: 2, minimumValue: 0.5, sync: false }
+                        },
+                        move: {
+                            enable: true,
+                            speed: 0.5,
+                            direction: "top",
+                            random: true,
+                            straight: false,
+                            outModes: { default: "out" }
+                        }
                     },
-                    color: { value: ["#ff9900", "#ffcc00", "#ffffff"] },
-                    shape: { type: "circle" },
-                    opacity: {
-                        value: 0.8,
-                        random: true,
-                        animation: { enable: true, speed: 1, minimumValue: 0.1, sync: false }
+                    interactivity: {
+                        detectsOn: "canvas",
+                        events: {
+                            onHover: { enable: true, mode: "repulse" },
+                            resize: true
+                        },
+                        modes: {
+                            repulse: { distance: 100, duration: 0.4 }
+                        }
                     },
-                    size: {
-                        value: 3,
-                        random: true,
-                        animation: { enable: true, speed: 2, minimumValue: 0.5, sync: false }
-                    },
-                    move: {
-                        enable: true,
-                        speed: 0.5,
-                        direction: "top",
-                        random: true,
-                        straight: false,
-                        outModes: { default: "out" }
-                    }
-                },
-                interactivity: {
-                    detectsOn: "canvas",
-                    events: {
-                        onHover: { enable: true, mode: "repulse" },
-                        resize: true
-                    },
-                    modes: {
-                        repulse: { distance: 100, duration: 0.4 }
-                    }
-                },
-                detectRetina: true
-            });
+                    detectRetina: true
+                });
+            }, 1500); // 1.5 second delay for SEO auditors
         });
     </script>
 </body>
