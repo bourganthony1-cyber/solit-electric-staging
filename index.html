@@ -63,15 +63,22 @@
         .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; width: 100%; position: relative; z-index: 10; }
         @media (min-width: 900px) { .hero-container { grid-template-columns: 1.2fr 0.8fr; } }
         
-        .hero-text h1 { color: white; font-size: clamp(3rem, 6vw, 5.5rem); text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        .hero-brand { display: inline-flex; align-items: center; width: min(100%, 520px); margin: 0 0 20px; padding: 14px 20px; background: #fff; border-radius: 12px; box-shadow: 0 0 0 1px rgba(255,153,0,0.25), 0 14px 45px rgba(0,0,0,0.45); }
+        .hero-brand img { display: block; width: 100%; height: auto; }
         .hero-text p { color: #cccccc; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-top: 15px; font-weight: 300; line-height: 1.4; }
         .hero-text .sub-tagline { font-weight: 700; color: var(--brand-orange); }
 
         /* Trust Badges Cluster */
-        .trust-cluster { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 30px; }
-        .trust-badge-custom { display: flex; flex-direction: column; align-items: flex-start; }
-        .trust-badge-custom img { height: 35px; opacity: 0.9; filter: grayscale(100%) brightness(200%); }
-        .trust-badge-custom span { color: var(--brand-gold); font-family: 'Oswald'; font-size: 0.9rem; margin-top: 5px; font-weight: 700; letter-spacing: 0.5px; }
+        .trust-cluster { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 30px; }
+        .trust-badge-custom { min-width: 0; display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(255,255,255,0.06); border: 1px solid #343434; border-radius: 9px; }
+        .trust-mark { flex: 0 0 auto; min-width: 42px; height: 42px; display: grid; place-items: center; border-radius: 8px; color: #fff; font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1; }
+        .trust-mark.nextdoor { background: #00b246; font-size: 1.35rem; }
+        .trust-mark.bbb { background: #0a65a8; font-size: 0.92rem; letter-spacing: 0.03em; }
+        .trust-mark.yelp { background: #d32323; font-size: 1.65rem; }
+        .trust-copy { min-width: 0; }
+        .trust-copy strong { display: block; color: #fff; font-family: 'Oswald', sans-serif; font-size: 1rem; line-height: 1.1; text-transform: uppercase; }
+        .trust-copy span { display: block; color: var(--brand-gold); font-size: 0.78rem; margin-top: 4px; font-weight: 700; line-height: 1.2; letter-spacing: 0.03em; }
+        @media (max-width: 720px) { .trust-cluster { grid-template-columns: 1fr; } }
         
         /* Lead Capture Form */
         .lead-form-card { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); border-top: 6px solid var(--brand-orange); position: relative; z-index: 10; }
@@ -103,15 +110,21 @@
         .service-info p { color: #aaa; }
 
         /* Reviews Carousel */
-        .carousel-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding: 20px 0; -ms-overflow-style: none; scrollbar-width: none; }
+        .reviews-shell { position: relative; }
+        .carousel-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 4px; gap: 20px; padding: 20px 4px 28px; -ms-overflow-style: none; scrollbar-width: none; }
         .carousel-container::-webkit-scrollbar { display: none; }
-        .carousel-slide { flex: 0 0 350px; scroll-snap-align: center; background: rgba(17,17,17,0.9); padding: 30px; border-radius: 12px; border-top: 4px solid var(--brand-gold); backdrop-filter: blur(5px); }
+        .carousel-slide { box-sizing: border-box; min-width: 0; flex: 0 0 min(86vw, 380px); scroll-snap-align: start; background: rgba(17,17,17,0.9); padding: 28px; border-radius: 12px; border-top: 4px solid var(--brand-gold); backdrop-filter: blur(5px); }
+        @media (min-width: 980px) { .carousel-slide { flex-basis: calc((100% - 40px) / 3); } }
         .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-        .review-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-orange); }
+        .review-avatar { flex: 0 0 50px; width: 50px; height: 50px; display: grid; place-items: center; border-radius: 50%; color: var(--brand-dark); background: var(--brand-orange); border: 2px solid var(--brand-gold); font-family: 'Oswald', sans-serif; font-weight: 700; }
         .review-meta h4 { color: white; font-size: 1.2rem; font-family: 'Roboto Condensed'; font-weight: 700; text-transform: none; }
         .review-meta span { color: var(--brand-orange); font-size: 0.9rem; }
-        .review-source { margin-left: auto; height: 25px; filter: grayscale(100%) brightness(200%); }
+        .review-source { margin-left: auto; padding: 4px 8px; color: #aaa; border: 1px solid #3a3a3a; border-radius: 999px; font-size: 0.75rem; white-space: nowrap; }
         .review-text { color: #ddd; font-style: italic; font-size: 1.1rem; }
+        .carousel-controls { display: flex; justify-content: center; align-items: center; gap: 12px; }
+        .carousel-btn { width: 44px; height: 44px; border: 1px solid #555; border-radius: 50%; color: #fff; background: #171717; font-size: 1.7rem; line-height: 1; cursor: pointer; transition: 0.2s ease; }
+        .carousel-btn:hover, .carousel-btn:focus-visible { color: var(--brand-dark); background: var(--brand-orange); border-color: var(--brand-orange); outline: none; }
+        .carousel-hint { color: #888; font-size: 0.9rem; }
 
         /* FAQ Accordion */
         .faq-container { max-width: 800px; margin: 0 auto; }
@@ -159,22 +172,24 @@
             <div class="hero-glow"></div>
             <div class="hero-container">
                 <div class="hero-text">
-                    <h1 style="color: var(--brand-orange); font-size: 4rem; text-shadow: 0 0 15px rgba(255,153,0,0.3); margin-bottom: 20px; letter-spacing: 2px;">⚡ SOLIT ELECTRIC</h1>
+                    <h1 class="hero-brand">
+                        <img src="https://www.solitelectric.com/images/SoLit_Electric_Logo.png" alt="SoLit Electric">
+                    </h1>
                     <p>Honest, straight-shooting electrical work, everything you need, nothing you don't for Denham Springs, Baton Rouge, Prairieville, and Gonzales.</p>
                     <p class="sub-tagline">No job too small. No corporate upselling.</p>
                     
-                    <div class="trust-cluster" style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 8px; border-left: 4px solid var(--brand-orange);">
+                    <div class="trust-cluster" aria-label="Customer trust badges">
                         <div class="trust-badge-custom">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Nextdoor_Logo.svg" alt="Nextdoor" style="height: 25px; filter: none; opacity: 1;">
-                            <span>23' 24' 25' NEIGHBORHOOD FAVORITE</span>
+                            <span class="trust-mark nextdoor" aria-hidden="true">N</span>
+                            <span class="trust-copy"><strong>Nextdoor</strong><span>2023 · 2024 · 2025 Neighborhood Favorite</span></span>
                         </div>
-                        <div class="trust-badge-custom" style="border-left: 1px solid #444; padding-left: 20px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Better_Business_Bureau_logo.svg" alt="BBB" style="height: 35px; filter: none; opacity: 1;">
-                            <span>BBB ACCREDITED</span>
+                        <div class="trust-badge-custom">
+                            <span class="trust-mark bbb" aria-hidden="true">BBB</span>
+                            <span class="trust-copy"><strong>Accredited</strong><span>A+ BBB rating</span></span>
                         </div>
-                        <div class="trust-badge-custom" style="border-left: 1px solid #444; padding-left: 20px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Yelp_logo.svg" alt="Yelp" style="height: 30px; filter: none; opacity: 1;">
-                            <span>5 STAR RATING</span>
+                        <div class="trust-badge-custom">
+                            <span class="trust-mark yelp" aria-hidden="true">★</span>
+                            <span class="trust-copy"><strong>Yelp</strong><span>5-star rating</span></span>
                         </div>
                     </div>
                 </div>
@@ -218,7 +233,7 @@
                     </div>
                 </div>
                 <div class="service-card" onclick="window.location.href='panel-upgrades.html'">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80" alt="Electrical Panel">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/ElectricalPanel.jpg" alt="Open residential electrical panel with labeled breakers" loading="lazy">
                     <div class="service-info">
                         <h2>Panel Upgrades</h2>
                         <p>Ensure your home's electrical panel is safe and up-to-code. We'll give you a straight answer on whether you need a repair or a full replacement.</p>
@@ -232,7 +247,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" alt="Electrical Tools">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Burned_distribution_board.JPG" alt="Burn-damaged electrical distribution panel" loading="lazy">
                     <div class="service-info">
                         <h2>Troubleshooting & Repairs</h2>
                         <p>Flickering lights? Tripped breakers? No job is too small. We will find the problem and fix it fast with no upsells.</p>
@@ -246,41 +261,46 @@
             <h2 class="section-header">Real Neighbors, Real Reviews</h2>
             <p class="section-sub">Don't take our word for it. See what your neighbors are saying about our straight-shooting approach.</p>
             
-            <div class="carousel-container">
-                <div class="carousel-slide">
+            <div class="reviews-shell">
+                <div class="carousel-container" tabindex="0" aria-label="Customer reviews">
+                <article class="carousel-slide">
                     <div class="review-header">
-                        <!-- Clean, organized panel picture -->
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=200&q=80" class="review-avatar" alt="Clean Panel Upgrade" style="border-color: #00B55A;">
+                        <span class="review-avatar" aria-hidden="true">MT</span>
                         <div class="review-meta">
                             <h4>Michael T.</h4>
                             <span>Denham Springs, LA</span>
                         </div>
-                        <svg class="review-source" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M12.5 11.5v3.6h5.8c-.3 1.9-2.2 5.5-5.8 5.5-3.5 0-6.3-2.9-6.3-6.4s2.8-6.4 6.3-6.4c1.9 0 3.2.8 4 1.5l2.8-2.7C17.5 4.9 15.3 4 12.5 4 8 4 4.3 7.7 4.3 12.2s3.7 8.2 8.2 8.2c4.7 0 7.9-3.3 7.9-8v-1h-7.9z"/></svg>
+                        <span class="review-source">Customer review</span>
                     </div>
                     <p class="review-text">"Yancie came out when my breaker kept tripping. Another company quoted me $3,500 for a new panel. Yancie fixed a loose neutral wire for a fraction of the cost. Honest and reliable."</p>
-                </div>
-                <div class="carousel-slide">
+                </article>
+                <article class="carousel-slide">
                     <div class="review-header">
-                        <!-- Messy, disorganized wires picture -->
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=200&q=80" class="review-avatar" alt="Electrical Hazards" style="border-color: #dc2743;">
+                        <span class="review-avatar" aria-hidden="true">SL</span>
                         <div class="review-meta">
                             <h4>Sarah L.</h4>
                             <span>Baton Rouge, LA</span>
                         </div>
-                        <svg class="review-source" viewBox="0 0 100 100" fill="#fff"><path d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 80c-16.5 0-30-13.5-30-30s13.5-30 30-30 30 13.5 30 30-13.5 30-30 30z"/></svg>
+                        <span class="review-source">Customer review</span>
                     </div>
                     <p class="review-text">"Best electrician in the area hands down. Installed an interlock for our generator right before the storm hit. No hidden fees, just great work."</p>
-                </div>
-                <div class="carousel-slide">
+                </article>
+                <article class="carousel-slide">
                     <div class="review-header">
-                        <img src="https://images.unsplash.com/photo-1664115166487-11116c9e0d16?w=200&q=80" class="review-avatar" alt="EV Charger">
+                        <span class="review-avatar" aria-hidden="true">DB</span>
                         <div class="review-meta">
                             <h4>David B.</h4>
                             <span>Prairieville, LA</span>
                         </div>
-                        <svg class="review-source" viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M12.5 11.5v3.6h5.8c-.3 1.9-2.2 5.5-5.8 5.5-3.5 0-6.3-2.9-6.3-6.4s2.8-6.4 6.3-6.4c1.9 0 3.2.8 4 1.5l2.8-2.7C17.5 4.9 15.3 4 12.5 4 8 4 4.3 7.7 4.3 12.2s3.7 8.2 8.2 8.2c4.7 0 7.9-3.3 7.9-8v-1h-7.9z"/></svg>
+                        <span class="review-source">Customer review</span>
                     </div>
                     <p class="review-text">"Fast, professional, and straight to the point. Upgraded our lighting and added an EV charger to the garage. Will be recommending to everyone in my subdivision."</p>
+                </article>
+                </div>
+                <div class="carousel-controls" aria-label="Review controls">
+                    <button class="carousel-btn" type="button" data-carousel-direction="-1" aria-label="Previous review">‹</button>
+                    <span class="carousel-hint">Swipe or use the arrows</span>
+                    <button class="carousel-btn" type="button" data-carousel-direction="1" aria-label="Next review">›</button>
                 </div>
             </div>
         </section>
@@ -391,13 +411,14 @@
         
         <div style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; color: #888;">
             <p><strong>License:</strong> LA State Contractors License #76273 | <strong>Rating:</strong> BBB A+ Accredited</p>
+            <p style="font-size: 0.75rem;">Burned panel photo: Victor zmey, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener" style="color:#aaa;">CC BY-SA 3.0</a>, via Wikimedia Commons.</p>
         </div>
     </footer>
 
     <!-- Initialize Sparkles -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            tsParticles.load("tsparticles", {
+            if (window.tsParticles) tsParticles.load("tsparticles", {
                 fullScreen: { enable: false },
                 fpsLimit: 120,
                 particles: {
@@ -438,7 +459,18 @@
                 },
                 detectRetina: true
             });
+
+            const carousel = document.querySelector('.carousel-container');
+            document.querySelectorAll('[data-carousel-direction]').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const card = carousel.querySelector('.carousel-slide');
+                    const gap = 20;
+                    const direction = Number(button.dataset.carouselDirection);
+                    carousel.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+                });
+            });
         });
     </script>
 </body>
 </html>
+
