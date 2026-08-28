@@ -13,9 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- tsParticles Slim Bundle for Sparkles Effect -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
-
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
@@ -197,48 +194,51 @@
     </footer>
 
     <!-- Initialize Sparkles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script>
-        tsParticles.load("tsparticles", {
-            fullScreen: { enable: false },
-            fpsLimit: 120,
-            particles: {
-                number: {
-                    value: 100,
-                    density: { enable: true, value_area: 800 }
+        window.onload = function() {
+            tsParticles.load("tsparticles", {
+                fullScreen: { enable: false },
+                fpsLimit: 120,
+                particles: {
+                    number: {
+                        value: 100,
+                        density: { enable: true, value_area: 800 }
+                    },
+                    color: { value: ["#ff9900", "#ffcc00", "#ffffff"] },
+                    shape: { type: "circle" },
+                    opacity: {
+                        value: 0.8,
+                        random: true,
+                        animation: { enable: true, speed: 1, minimumValue: 0.1, sync: false }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        animation: { enable: true, speed: 2, minimumValue: 0.5, sync: false }
+                    },
+                    move: {
+                        enable: true,
+                        speed: 0.5,
+                        direction: "top",
+                        random: true,
+                        straight: false,
+                        outModes: { default: "out" }
+                    }
                 },
-                color: { value: ["#ff9900", "#ffcc00", "#ffffff"] },
-                shape: { type: "circle" },
-                opacity: {
-                    value: 0.8,
-                    random: true,
-                    animation: { enable: true, speed: 1, minimumValue: 0.1, sync: false }
+                interactivity: {
+                    detectsOn: "canvas",
+                    events: {
+                        onHover: { enable: true, mode: "repulse" },
+                        resize: true
+                    },
+                    modes: {
+                        repulse: { distance: 100, duration: 0.4 }
+                    }
                 },
-                size: {
-                    value: 3,
-                    random: true,
-                    animation: { enable: true, speed: 2, minimumValue: 0.5, sync: false }
-                },
-                move: {
-                    enable: true,
-                    speed: 0.5,
-                    direction: "top",
-                    random: true,
-                    straight: false,
-                    outModes: { default: "out" }
-                }
-            },
-            interactivity: {
-                detectsOn: "canvas",
-                events: {
-                    onHover: { enable: true, mode: "repulse" },
-                    resize: true
-                },
-                modes: {
-                    repulse: { distance: 100, duration: 0.4 }
-                }
-            },
-            detectRetina: true
-        });
+                detectRetina: true
+            });
+        };
     </script>
 </body>
 </html>
