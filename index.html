@@ -89,10 +89,26 @@
         .hero-text .sub-tagline { font-weight: 700; color: var(--brand-orange); }
 
         /* Trust Badges Cluster */
-        .trust-cluster { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 30px; }
-        .trust-badge-custom { display: flex; flex-direction: column; align-items: flex-start; }
-        .trust-badge-custom img { height: 35px; opacity: 0.9; filter: grayscale(100%) brightness(200%); }
-        .trust-badge-custom span { color: var(--brand-gold); font-family: 'Oswald'; font-size: 0.9rem; margin-top: 5px; font-weight: 700; letter-spacing: 0.5px; }
+        .trust-cluster { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px; }
+        .trust-badge-custom { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .trust-badge-custom span { color: var(--brand-gold); font-family: 'Oswald'; font-size: 0.9rem; margin-top: 10px; font-weight: 700; letter-spacing: 0.5px; }
+        
+        .gold-seal {
+            width: 100px;
+            height: 100px;
+            display: grid;
+            place-content: center;
+            border: 6px double #4a3510;
+            border-radius: 50%;
+            color: #17120a;
+            background: radial-gradient(circle at 35% 30%, #fff0a9 0, #e0b94d 36%, #9f721a 72%, #f7dc86 100%);
+            box-shadow: inset 0 0 0 4px #e8c45b, 0 6px 15px rgba(0, 0, 0, 0.35);
+            font-family: "Arial Narrow", "Segoe UI Condensed", Impact, sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .gold-seal strong { display: block; font-size: 1.8rem; line-height: 0.95; }
+        .gold-seal span { display: block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; }
         
         /* Lead Capture Form */
         .lead-form-card { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); border-top: 6px solid var(--brand-orange); position: relative; z-index: 10; }
@@ -187,21 +203,25 @@
                     <p>Honest, straight-shooting electrical work, everything you need, nothing you don't for Denham Springs, Baton Rouge, Prairieville, and Gonzales.</p>
                     <p class="sub-tagline">No job too small. No corporate upselling.</p>
                     
-                    <div class="trust-cluster" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 30px;">
-                        <div class="trust-badge-custom" style="display: flex; flex-direction: column; align-items: flex-start;">
-                            <!-- Nextdoor SVG Placeholder -->
-                            <svg height="35" viewBox="0 0 100 100" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 80c-16.5 0-30-13.5-30-30s13.5-30 30-30 30 13.5 30 30-13.5 30-30 30z"/><path d="M50 35c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z"/></svg>
-                            <span style="color: var(--brand-gold); font-family: 'Oswald'; font-size: 0.9rem; margin-top: 5px; font-weight: 700; letter-spacing: 0.5px;">23' 24' 25' NEIGHBORHOOD FAVORITE</span>
+                    <div class="trust-cluster" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px;">
+                        <div class="trust-badge-custom">
+                            <!-- Nextdoor Award Image -->
+                            <img src="https://www.solitelectric.com/images/favorite.png" alt="Nextdoor Neighborhood Favorite" style="height: 100px; width: auto; filter: none; opacity: 1; display: block; border-radius: 50%; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);">
+                            <span>23' 24' 25' NEIGHBORHOOD FAVORITE</span>
                         </div>
-                        <div class="trust-badge-custom" style="display: flex; flex-direction: column; align-items: flex-start;">
-                            <!-- BBB A+ SVG Placeholder -->
-                            <svg height="35" viewBox="0 0 100 100" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="10"/><text x="50" y="65" font-family="Arial" font-weight="bold" font-size="40" text-anchor="middle" fill="#000">A+</text></svg>
-                            <span style="color: var(--brand-gold); font-family: 'Oswald'; font-size: 0.9rem; margin-top: 5px; font-weight: 700; letter-spacing: 0.5px;">BBB ACCREDITED</span>
+                        <div class="trust-badge-custom">
+                            <!-- BBB A+ Gold Seal -->
+                            <div class="gold-seal" role="img" aria-label="Better Business Bureau A plus accredited seal">
+                                <span>BBB</span><strong>A+</strong><span>Accredited</span>
+                            </div>
+                            <span>BBB ACCREDITED</span>
                         </div>
-                        <div class="trust-badge-custom" style="display: flex; flex-direction: column; align-items: flex-start;">
-                            <!-- Yelp SVG Placeholder -->
-                            <svg height="35" viewBox="0 0 100 100" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M50 10C35 10 25 25 25 40c0 20 25 50 25 50s25-30 25-50c0-15-10-30-25-30z"/></svg>
-                            <span style="color: var(--brand-gold); font-family: 'Oswald'; font-size: 0.9rem; margin-top: 5px; font-weight: 700; letter-spacing: 0.5px;">5 STAR RATING</span>
+                        <div class="trust-badge-custom">
+                            <!-- Yelp 5 Star Gold Seal -->
+                            <div class="gold-seal" role="img" aria-label="Yelp five star rating seal">
+                                <span>Yelp</span><strong>5★</strong><span>Rating</span>
+                            </div>
+                            <span>5 STAR RATING</span>
                         </div>
                     </div>
                 </div>
