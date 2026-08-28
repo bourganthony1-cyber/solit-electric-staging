@@ -110,6 +110,8 @@
     </style>
 </head>
 <body>
+    <!-- Global Sparkles Background -->
+    <div id="tsparticles"></div>
 
     <header>
         <nav class="nav-container">
@@ -124,8 +126,6 @@
         <!-- SPICED UP HERO WITH SPARKLES & GLOW -->
         <section id="home" class="hero">
             <div class="hero-glow"></div>
-            <!-- Sparkles Container -->
-            <div id="tsparticles"></div>
 
             <div class="hero-container">
                 <div class="hero-text">
@@ -196,7 +196,7 @@
     <!-- Initialize Sparkles -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script>
-        window.onload = function() {
+        document.addEventListener("DOMContentLoaded", function() {
             tsParticles.load("tsparticles", {
                 fullScreen: { enable: false },
                 fpsLimit: 120,
@@ -238,7 +238,7 @@
                 },
                 detectRetina: true
             });
-        };
+        });
     </script>
 </body>
 </html>
