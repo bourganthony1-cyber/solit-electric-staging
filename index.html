@@ -258,6 +258,9 @@
         .social-item .overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); pointer-events: none; }
         .social-item .overlay span { color: white; font-family: 'Oswald'; font-size: 1.5rem; background: var(--brand-orange); padding: 5px 15px; border-radius: 4px; }
 
+        /* Accessibility / SEO */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+
         /* Footer */
         footer { background-color: rgba(0, 0, 0, 0.7); color: white; padding: 80px 5%; text-align: center; border-top: 1px solid #333; position: relative; z-index: 10; backdrop-filter: blur(5px); }
         footer h2 { color: white; font-size: 2.5rem; margin-bottom: 5px; }
@@ -321,6 +324,7 @@
             <div class="hero-glow"></div>
             <div class="hero-container">
                 <div class="hero-text">
+                    <h1 class="sr-only">SoLit Electric - Top-Rated Licensed Electrician in Baton Rouge & Denham Springs</h1>
                     <!-- Mechanic Shop Logo Badge -->
                     <div style="background-color: #ffffff !important; display: inline-block; padding: 25px 40px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.6); border: 4px solid #111; outline: 3px dashed var(--brand-orange); outline-offset: -8px;">
                         <img src="https://www.solitelectric.com/images/SoLit_Electric_Logo.png" alt="SoLit Electric Logo" style="max-width: 320px; width: 100%; height: auto; display: block; mix-blend-mode: multiply; filter: contrast(1.15) brightness(1.05);">
