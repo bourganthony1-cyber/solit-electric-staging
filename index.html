@@ -561,7 +561,7 @@
               padding: 20px 0;">
 
               <!-- 1. FACEBOOK BUTTON -->
-              <a href="YOUR_FACEBOOK_PAGE_URL" target="_blank" rel="noopener" aria-label="Find us on Facebook" class="glass-btn btn-fb">
+              <a href="https://www.facebook.com/profile.php?id=61593426599177" target="_blank" rel="noopener" aria-label="Find us on Facebook" class="glass-btn btn-fb">
                 <!-- Inline SVG for Facebook Logo -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="margin-right: 10px; transition: fill 0.2s ease;">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -589,7 +589,7 @@
               </a>
 
               <!-- 3. NEXTDOOR BUTTON -->
-              <a href="YOUR_NEXTDOOR_BUSINESS_PAGE_URL" target="_blank" rel="noopener" aria-label="Recommend us on Nextdoor" class="glass-btn btn-nd">
+              <a href="https://nextdoor.com/page/solit-electric-baton-rouge-la/" target="_blank" rel="noopener" aria-label="Recommend us on Nextdoor" class="glass-btn btn-nd">
                 <!-- Inline SVG for Nextdoor 'N' Logo -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="margin-right: 10px; transition: fill 0.2s ease;">
                   <path d="M18.9 2h-4.2c-.6 0-1.1.4-1.2.9L11 9.4 8.5 2.9C8.3 2.4 7.8 2 7.2 2H3c-.7 0-1.2.7-.9 1.4l5.3 14-3.7 9.2c-.3.7.2 1.4.9 1.4h4.2c.6 0 1.1-.4 1.2-.9l2.5-6.5 2.5 6.5c.1.5.6.9 1.2.9h4.2c.7 0 1.2-.7.9-1.4l-3.7-9.2 5.3-14c.3-.7-.2-1.4-.9-1.4z"/>
@@ -683,7 +683,37 @@
             }, 1500); // 1.5 second delay for SEO auditors
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.carousel-container');
+        if (!carousel) return;
+        
+        let autoScrollInterval;
+        
+        function startAutoScroll() {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(() => {
+                // If we're at the end, scroll back to the beginning smoothly
+                if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10)) {
+                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carousel.scrollBy({ left: 390, behavior: 'smooth' }); // slide width (350) + gap (40)
+                }
+            }, 3500); // 3.5 seconds
+        }
+        
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        carousel.addEventListener('mouseleave', startAutoScroll);
+        
+        // Start auto-scrolling
+        startAutoScroll();
+    });
+    </script>
 </body>
 </html>
+
+
+
 
 
