@@ -45,13 +45,10 @@
         
         /* Placeholder Image Frame */
         .photo-frame {
-            background: #111; border: 2px dashed #444; border-radius: 12px; padding: 10px; display: flex; align-items: center; justify-content: center; min-height: 500px; position: relative;
+            background: #111; border: none; border-radius: 12px; padding: 10px; display: flex; align-items: center; justify-content: center; min-height: 500px; position: relative;
             box-shadow: 0 20px 40px rgba(0,0,0,0.6); overflow: hidden;
         }
-        .photo-frame::before {
-            content: "Yancie & Son Photo Placeholder";
-            color: #666; font-family: "Oswald", sans-serif; font-size: 1.5rem; letter-spacing: 1px;
-        }
+        
         
         .story-content p { color: #cccccc; font-size: 1.25rem; margin-bottom: 25px; line-height: 1.7; font-weight: 300; }
         .story-content h2 { font-size: 3rem; margin-bottom: 30px; color: white; border-bottom: 2px solid var(--brand-orange); padding-bottom: 15px; display: inline-block; }
@@ -94,7 +91,7 @@
         <section class="content-wrapper">
             <!-- Left Side: Photo Frame -->
             <div class="photo-frame">
-                <!-- <img src="images/yancie-and-son.jpg" alt="Yancie David and her son" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"> -->
+                <img src="images/yancie-and-son.jpg" alt="Yancie David and her son" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; position: absolute; top: 0; left: 0;">
             </div>
 
             <!-- Right Side: Story Content -->
@@ -135,4 +132,5 @@
 
 </body>
 </html>
+
 
