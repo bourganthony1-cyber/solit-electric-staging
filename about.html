@@ -6,136 +6,131 @@
     <title>About SoLit Electric | Denham Springs Electrician</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Learn about SoLit Electric, Denham Springs' Nextdoor Business of the Year. Honest, reliable, and licensed electrical work where no job is too small.">
-    <meta name="robots" content="index, follow">
-
+    <meta name="description" content="Learn about SoLit Electric, a family-owned, licensed electrical contracting company based in Denham Springs, LA. Honest, straight-shooting work.">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- CSS (Matching Main Site Dark Theme) -->
     <style>
         :root {
             --brand-orange: #ff9900;
-            --brand-gold: #d4af37;
-            --brand-dark: #0d0d0d;
+            --brand-gold: #ffcc00;
+            --brand-dark: #050505;
+            --brand-light: #fcfcfc;
+            --text-gray: #4a4a4a;
         }
 
-        body, html { margin: 0; padding: 0; font-family: 'Roboto Condensed', sans-serif; color: #cccccc; line-height: 1.6; overflow-x: hidden; background: var(--brand-dark); }
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-weight: 500; margin: 0; line-height: 1.2; color: white; }
-        a { text-decoration: none; transition: color 0.3s ease; }
+        body, html { margin: 0; padding: 0; font-family: "Roboto Condensed", sans-serif; color: var(--text-gray); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; background: var(--brand-dark); }
+        h1, h2, h3 { font-family: "Oswald", sans-serif; font-weight: 500; margin: 0; color: white; line-height: 1.2; }
+        a { text-decoration: none; transition: all 0.3s ease; }
 
-        header { background-color: var(--brand-dark); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--brand-orange); }
+        /* Navigation */
+        header { background-color: var(--brand-dark); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.5); border-bottom: 2px solid var(--brand-orange); }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; }
-        .nav-container a { display: block; color: white; text-align: center; padding: 15px 25px; font-size: 18px; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-container a { color: white; padding: 18px 30px; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; }
         .nav-container a:hover, .nav-container a.active { color: var(--brand-orange); }
 
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.85)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80') no-repeat center center;
-            background-size: cover; min-height: 40vh; display: flex; flex-direction: column; justify-content: center; padding: 20px 5%; text-align: center;
-            position: relative;
+            background: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.95)), url("images/baton-rouge-capitol-dusk.jpg") center/cover no-repeat;
+            min-height: 40vh; display: flex; align-items: center; justify-content: center; padding: 40px 5%; position: relative; text-align: center; border-bottom: 1px solid #222;
         }
-        .hero::after {
-            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--brand-orange), transparent);
-            box-shadow: 0 0 30px 5px rgba(255, 153, 0, 0.4);
-        }
-        .hero h1 { color: var(--brand-orange); font-size: clamp(2.5rem, 8vw, 5rem); text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
-        .hero p { color: white; font-size: clamp(1.2rem, 3vw, 2rem); font-family: 'Oswald', sans-serif; margin-top: 15px; }
+        .hero h1 { font-size: clamp(3rem, 6vw, 5.5rem); color: var(--brand-orange); text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
 
-        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 60px 5%; }
+        /* Content Layout */
+        .content-wrapper { max-width: 1200px; margin: 60px auto; padding: 0 5%; display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
+        @media (min-width: 900px) { .content-wrapper { grid-template-columns: 1fr 1fr; } }
         
-        .story-section { font-size: 1.2rem; color: #aaa; margin-bottom: 50px; }
-        .story-section h2 { font-size: 2.5rem; margin-bottom: 20px; color: white; }
-        .story-section p { margin-bottom: 20px; }
-
-        .award-banner {
-            background: rgba(17,17,17,0.9);
-            border: 1px solid rgba(212, 175, 55, 0.55);
-            border-top: 4px solid var(--brand-orange);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            margin: 40px 0;
-            border-radius: 8px;
+        /* Placeholder Image Frame */
+        .photo-frame {
+            background: #111; border: none; border-radius: 12px; padding: 10px; display: flex; align-items: center; justify-content: center; min-height: 500px; position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6); overflow: hidden;
         }
-        .award-banner h2 { color: var(--brand-orange); font-size: 2.5rem; margin-bottom: 15px; }
-        .award-banner p { font-size: 1.3rem; font-family: 'Oswald', sans-serif; color: var(--brand-gold); }
-
-        .credentials-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 50px;
-        }
-        @media (min-width: 768px) { .credentials-grid { grid-template-columns: 1fr 1fr; } }
         
-        .cred-card { background: rgba(17,17,17,0.9); padding: 30px; text-align: center; border: 1px solid #333; border-top: 4px solid var(--brand-orange); border-radius: 8px; }
-        .cred-card h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--brand-orange); }
-        .cred-card p { color: #aaa; }
+        
+        .story-content p { color: #cccccc; font-size: 1.25rem; margin-bottom: 25px; line-height: 1.7; font-weight: 300; }
+        .story-content h2 { font-size: 3rem; margin-bottom: 30px; color: white; border-bottom: 2px solid var(--brand-orange); padding-bottom: 15px; display: inline-block; }
 
-        footer { background-color: #030303; color: white; padding: 60px 5%; text-align: center; border-top: 2px solid var(--brand-orange); }
-        footer h2 { color: white; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; }
-        footer .phone-link { color: var(--brand-orange); font-weight: 700; font-size: clamp(2rem, 5vw, 3rem); }
-        footer .phone-link:hover { color: var(--brand-gold); }
-        .trust-signals { margin-top: 30px; padding-top: 30px; border-top: 1px solid #333; font-size: 16px; color: #888; }
+        /* Values Grid */
+        .values-grid { max-width: 1200px; margin: 0 auto 80px; padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .value-card { background: #111; padding: 40px; border-radius: 8px; border-left: 4px solid var(--brand-orange); }
+        .value-card h3 { color: var(--brand-gold); font-size: 1.8rem; margin-bottom: 15px; }
+        .value-card p { color: #aaa; font-size: 1.1rem; }
+
+        /* Footer */
+        footer { background-color: var(--brand-dark); padding: 80px 5% 40px; text-align: center; border-top: 2px solid var(--brand-orange); }
+        footer h2 { color: white; font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 15px; }
+        .footer-sub { color: #aaa; font-size: 1.2rem; margin-bottom: 30px; }
+        footer .phone-link { color: var(--brand-orange); font-weight: 700; font-size: clamp(2.5rem, 6vw, 4.5rem); display: inline-block; margin-bottom: 30px; }
+        footer .phone-link:hover { color: var(--brand-gold); transform: scale(1.05); }
     </style>
 </head>
 <body>
 
     <header>
         <nav class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#about" class="active">About</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="index.html">HOME</a>
+            <a href="panel-upgrades.html">PANEL UPGRADES</a>
+            <a href="index.html#reviews">REVIEWS</a>
+            <a href="about.html" class="active" style="color: var(--brand-orange);">ABOUT</a>
+            <a href="#">BLOG</a>
+            <a href="index.html#contact">CONTACT</a>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>About SoLit Electric</h1>
-            <p>Your Neighbors. Your Electricians.</p>
+            <div style="position: relative; z-index: 10;">
+                <h1>About Yancie</h1>
+                <p style="color: white; font-size: 1.5rem; font-family: 'Oswald', sans-serif; letter-spacing: 2px;">YOUR NEIGHBOR. YOUR ELECTRICIAN.</p>
+            </div>
         </section>
 
         <section class="content-wrapper">
-            <div class="award-banner">
-                <h2>Nextdoor Business of the Year</h2>
-                <p>Voted Neighborhood Favorite by the Denham Springs & Baton Rouge Community</p>
+            <!-- Left Side: Photo Frame -->
+            <div class="photo-frame">
+                <img src="images/yancie-and-son.jpg" alt="Yancie David and her son" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; position: absolute; top: 0; left: 0;">
             </div>
 
-            <div class="story-section">
-                <h2>No Job Too Small. No Corporate Upselling.</h2>
-                <p>SoLit Electric wasn't built in a corporate boardroom. It was built right here in Louisiana by Yancie David, on the simple idea that <strong style="color: white;">honesty is the best business model.</strong></p>
-                <p>We believe that when you call an electrician, you should get a straight answer. We don't believe in high-pressure sales tactics. If a job just requires a simple, inexpensive fix, that's exactly what we'll tell you. We treat our customers like our neighbors—because that's exactly what you are.</p>
-                <p>From swapping out a hard-to-reach light fixture to completely upgrading a home's electrical panel or wiring in a new generator, we approach every single job with the exact same level of respect, transparency, and hard work.</p>
+            <!-- Right Side: Story Content -->
+            <div class="story-content">
+                <h2>The SoLit Story</h2>
+                <p><strong>[Placeholder for Yancie's backstory]</strong></p>
+                <p>SoLit Electric wasn't built in a corporate boardroom. It was built right here in Louisiana by Yancie David on a simple idea: <em>honest, straight-shooting electrical work.</em></p>
+                <p>When you call an electrician, you should get a straight answer. We don't believe in high-pressure sales tactics. If a job just requires a simple, inexpensive fix, that's exactly what we'll tell you.</p>
+                <p>We treat our customers like our neighbors?"because that's exactly what you are. Once we get the photo of Yancie and her son, we can drop it into the frame right next to this text, and write out her full background and journey here.</p>
             </div>
+        </section>
 
-            <div class="credentials-grid">
-                <div class="cred-card">
-                    <h3>Fully Licensed</h3>
-                    <p>Louisiana State Contractors License #76273. We are legally certified and rigorously trained to handle your home's electrical systems safely.</p>
-                </div>
-                <div class="cred-card">
-                    <h3>BBB A+ Rated</h3>
-                    <p>Accredited by the Better Business Bureau with an A+ rating. We stand by our work and our word.</p>
-                </div>
+        <section class="values-grid">
+            <div class="value-card">
+                <h3>Fully Licensed</h3>
+                <p>Louisiana State Contractors License #76273. We are legally certified and rigorously trained to handle your home's electrical systems safely.</p>
+            </div>
+            <div class="value-card">
+                <h3>BBB A+ Rated</h3>
+                <p>Accredited by the Better Business Bureau with an A+ rating. We stand by our work and our word.</p>
+            </div>
+            <div class="value-card">
+                <h3>Nextdoor Favorite</h3>
+                <p>Voted Neighborhood Favorite by the Denham Springs & Baton Rouge Community for multiple consecutive years.</p>
             </div>
         </section>
     </main>
 
-    <footer>
-        <h2>Let's Get to Work</h2>
-        <h2><a href="tel:+12254721165" class="phone-link">225-472-1165</a></h2>
+    <footer id="contact">
+        <h2>We are here for you. Call us directly.</h2>
+        <p class="footer-sub">Have an electrical emergency or need a quick quote? Skip the forms and give us a call.</p>
+        <a href="tel:+12254721165" class="phone-link">225-472-1165</a>
         
-        <div class="trust-signals">
-            <p><strong>License:</strong> Louisiana State Contractors License #76273</p>
-            <p><strong>Awards:</strong> Better Business Bureau A+ Accredited | Nextdoor Business of the Year</p>
-            <p>&copy; 2026 SoLit Electric. Owned & Operated by Yancie David. All Rights Reserved.</p>
+        <div style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; color: #888;">
+            <p><strong>License:</strong> LA State Contractors License #76273 | <strong>Rating:</strong> BBB A+ Accredited</p>
         </div>
     </footer>
 
 </body>
 </html>
+
+
